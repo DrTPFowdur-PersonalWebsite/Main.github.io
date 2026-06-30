@@ -1,0 +1,594 @@
+/*=====================================================
+GENERAL
+======================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f7fb;
+
+    color:#333;
+
+    line-height:1.7;
+}
+
+
+/*=====================================================
+HEADER
+======================================================*/
+
+header{
+
+    position:relative;
+
+    background:
+    linear-gradient(rgba(7,34,77,0.88),
+    rgba(7,34,77,0.88)),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600");
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:white;
+
+    padding:70px 8%;
+}
+
+
+.header-content{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:60px;
+
+    flex-wrap:wrap;
+}
+
+
+
+/*=====================================================
+PROFILE PHOTO
+======================================================*/
+
+.profile-photo img{
+
+    width:280px;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:8px solid white;
+
+    box-shadow:0px 15px 40px rgba(0,0,0,.45);
+
+    transition:.4s;
+}
+
+.profile-photo img:hover{
+
+    transform:scale(1.04);
+
+}
+
+
+
+/*=====================================================
+PROFILE DETAILS
+======================================================*/
+
+.profile-details{
+
+    max-width:700px;
+
+}
+
+.profile-details h1{
+
+    font-size:44px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.profile-details h2{
+
+    color:#FFD54F;
+
+    font-size:22px;
+
+    font-weight:500;
+
+    margin-bottom:25px;
+
+}
+
+.profile-details p{
+
+    font-size:18px;
+
+    margin-bottom:18px;
+
+}
+
+
+
+/*=====================================================
+CONTACT
+======================================================*/
+
+.contact{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    margin-top:25px;
+
+}
+
+.contact div{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    padding:12px 18px;
+
+    border-radius:8px;
+
+}
+
+.contact i{
+
+    color:#FFD54F;
+
+    margin-right:8px;
+
+}
+
+
+
+/*=====================================================
+SECTION TITLES
+======================================================*/
+
+section{
+
+    padding:70px 8%;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    font-size:34px;
+
+    margin-bottom:40px;
+
+    color:#0d3b73;
+
+    position:relative;
+
+}
+
+section h2::after{
+
+    content:"";
+
+    width:90px;
+
+    height:4px;
+
+    background:#f5b400;
+
+    display:block;
+
+    margin:12px auto;
+
+    border-radius:10px;
+
+}
+
+
+
+/*=====================================================
+ABOUT
+======================================================*/
+
+.about{
+
+    background:white;
+
+}
+
+.about p{
+
+    font-size:18px;
+
+    max-width:1100px;
+
+    margin:auto auto 25px auto;
+
+    text-align:justify;
+
+}
+
+
+
+/*=====================================================
+NAVIGATION
+======================================================*/
+
+.navigation{
+
+    background:#eef4fb;
+
+}
+
+
+
+/*=====================================================
+CARD GRID
+======================================================*/
+
+.card-container{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+/*=====================================================
+CARDS
+======================================================*/
+
+.card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#333;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+    border-top:6px solid #0d3b73;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 25px 45px rgba(0,0,0,.15);
+
+}
+
+
+
+.card i{
+
+    font-size:55px;
+
+    color:#0d3b73;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.card h3{
+
+    color:#0d3b73;
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.card p{
+
+    font-size:15px;
+
+    color:#555;
+
+}
+
+
+
+/*=====================================================
+HIGHLIGHTS
+======================================================*/
+
+.highlights{
+
+    background:white;
+
+}
+
+
+
+.highlight-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.highlight{
+
+    text-align:center;
+
+    background:linear-gradient(
+
+    135deg,
+
+    #0d3b73,
+
+    #1557a5);
+
+    color:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    transition:.35s;
+
+}
+
+
+
+.highlight:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.highlight h3{
+
+    font-size:52px;
+
+    color:#FFD54F;
+
+}
+
+
+
+.highlight p{
+
+    font-size:18px;
+
+}
+
+
+
+/*=====================================================
+FOOTER
+======================================================*/
+
+footer{
+
+    background:#071f44;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+    font-size:15px;
+
+}
+
+
+
+/*=====================================================
+ANIMATIONS
+======================================================*/
+
+.card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.highlight{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.profile-photo{
+
+    animation:zoomIn 1s ease;
+
+}
+
+.profile-details{
+
+    animation:slideLeft 1s ease;
+
+}
+
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@keyframes zoomIn{
+
+    from{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+@keyframes slideLeft{
+
+    from{
+
+        transform:translateX(80px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/*=====================================================
+RESPONSIVE
+======================================================*/
+
+@media(max-width:1000px){
+
+.header-content{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.profile-details h1{
+
+    font-size:34px;
+
+}
+
+.contact{
+
+    justify-content:center;
+
+}
+
+}
+
+
+
+@media(max-width:700px){
+
+.profile-photo img{
+
+    width:220px;
+
+    height:220px;
+
+}
+
+section{
+
+    padding:45px 7%;
+
+}
+
+.card{
+
+    padding:28px;
+
+}
+
+.highlight h3{
+
+    font-size:42px;
+
+}
+
+}

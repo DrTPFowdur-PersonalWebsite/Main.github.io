@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Engagement | Dr Tulsi Pawan Fowdur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #eef3f8;
+            color: #1e2a3a;
+            line-height: 1.7;
+        }
+        header {
+            background: linear-gradient(135deg, #08254e, #1557a5);
+            color: white;
+            padding: 50px 8%;
+            box-shadow: 0 8px 25px rgba(0,0,0,.25);
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+        .header-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid white;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,.35);
+        }
+        .header-text {
+            flex: 1;
+        }
+        .header-text h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .header-text h2 {
+            font-weight: 400;
+            color: #FFD54F;
+            margin-bottom: 20px;
+        }
+        .header-text p {
+            font-size: 18px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+        .section {
+            margin-bottom: 55px;
+            animation: fadeUp .8s ease;
+        }
+        .section-title {
+            background: #0d3b73;
+            color: white;
+            padding: 18px 25px;
+            font-size: 28px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title .badge {
+            font-size: 16px;
+            font-weight: 400;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 16px;
+            border-radius: 30px;
+            margin-left: 10px;
+        }
+        .card {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.12);
+            overflow-x: auto;
+        }
+
+        .engagement-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14.5px;
+            min-width: 650px;
+        }
+        .engagement-table thead th {
+            background: #0d3b73;
+            color: white;
+            padding: 12px 12px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .engagement-table tbody td {
+            padding: 12px 12px;
+            border-bottom: 1px solid #e6edf5;
+            vertical-align: top;
+        }
+        .engagement-table tbody tr:hover {
+            background: #f4f8fe;
+        }
+        .engagement-table .num-col {
+            width: 45px;
+            text-align: center;
+            font-weight: 600;
+            color: #0d3b73;
+            white-space: nowrap;
+        }
+        .engagement-table .content-col {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .engagement-table .content-col a {
+            color: #1557a5;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .engagement-table .content-col a:hover {
+            text-decoration: underline;
+        }
+
+        .sub-section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0d3b73;
+            margin: 10px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e6edf5;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sub-section-title i {
+            color: #1557a5;
+        }
+
+        .home-btn-wrap {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .home-btn {
+            display: inline-block;
+            background: #0d3b73;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 40px;
+            transition: .35s;
+            box-shadow: 0 10px 25px rgba(0,0,0,.25);
+        }
+        .home-btn:hover {
+            background: #1557a5;
+            transform: translateY(-4px);
+        }
+
+        footer {
+            margin-top: 70px;
+            background: #08254e;
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+        footer h3 {
+            font-weight: 500;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 700px) {
+            .header-container { flex-direction: column; text-align: center; }
+            .card { padding: 15px; }
+            .engagement-table { font-size: 13px; min-width: 480px; }
+            .engagement-table thead th { font-size: 13px; padding: 8px; }
+            .engagement-table tbody td { padding: 10px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="Dr-T.P.Fowdur-Picture.jpg" alt="Dr Tulsi Pawan Fowdur">
+            <div class="header-text">
+                <h1>Associate Professor (Dr) Tulsi Pawan Fowdur</h1>
+                <h2>International Engagement</h2>
+                <p>Department of Electrical and Electronic Engineering<br>Faculty of Engineering<br>University of Mauritius</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- ========================================================= -->
+        <!-- 1. Editorial Board Member / Editor -->
+        <!-- ========================================================= -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-edit"></i> Editorial Board Member / Editor
+            </div>
+            <div class="card">
+                <table class="engagement-table">
+                    <thead>
+                        <tr><th>#</th><th>Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="num-col">1</td>
+                            <td class="content-col">Editorial Board Member <em>Scientific Reports</em>, Springer Nature (February 2025 – to date).</td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">2</td>
+                            <td class="content-col">Co-Guest Editor for the Collection on 6G Technologies, <em>Scientific Reports</em>, Springer Nature. <a href="https://www.nature.com/collections/bfjjciceaj/guest-editors" target="_blank">https://www.nature.com/collections/bfjjciceaj/guest-editors</a></td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">3</td>
+                            <td class="content-col">Co-Guest Editor for the Collection on Generative AI for Next-Generation Mobile and IoT Network Systems, <em>Discover Networks</em>, Springer Nature. <a href="https://link.springer.com/collections/hbccjihhgc" target="_blank">https://link.springer.com/collections/hbccjihhgc</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 2. International Conference Organisation -->
+        <!-- ========================================================= -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-calendar-alt"></i> International Conference Organisation
+            </div>
+            <div class="card">
+                <table class="engagement-table">
+                    <thead>
+                        <tr><th>#</th><th>Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="num-col">1</td><td class="content-col">Member of Technical Programme Committee, The Sixth International Conference on Communication Theory, Reliability, and Quality of Service, CTRQ 2013, April 21–26, 2013 – Venice, Italy.</td></tr>
+                        <tr><td class="num-col">2</td><td class="content-col">Member of Technical Programme Committee, The Seventh International Conference on Communication Theory, Reliability, and Quality of Service, CTRQ 2014, February 23–27, 2014 – Nice, France.</td></tr>
+                        <tr><td class="num-col">3</td><td class="content-col">Member of Technical Programme Committee, The Eighth International Conference on Communication Theory, Reliability, and Quality of Service, CTRQ 2015, April 19–24, 2015 – Barcelona, Spain.</td></tr>
+                        <tr><td class="num-col">4</td><td class="content-col">Member of Technical Programme Committee, The Ninth International Conference on Communication Theory, Reliability, and Quality of Service, CTRQ 2016, February 21–25, 2016 – Lisbon, Portugal.</td></tr>
+                        <tr><td class="num-col">5</td><td class="content-col">Member of Technical Programme Committee, The Tenth International Conference on Communication Theory, Reliability, and Quality of Service, CTRQ 2017, April 23–27, 2017 – Venice, Italy.</td></tr>
+                        <tr><td class="num-col">6</td><td class="content-col">General Co-Chair, First International Conference on Electrical, Electronic and Communications Engineering (ELECOM 2016), Bagatelle, Mauritius, November 25–27, 2016.</td></tr>
+                        <tr><td class="num-col">7</td><td class="content-col">General Co-Chair, The Second International Conference on Emerging Trends in Electrical, Electronic and Communications Engineering (ELECOM 2018), November 28–30, 2018, Mauritius.</td></tr>
+                        <tr><td class="num-col">8</td><td class="content-col">General Co-Chair, The 3rd International Conference on Emerging Trends in Electrical, Electronic and Communications Engineering (ELECOM 2020), 25–27 November 2020, Mauritius.</td></tr>
+                        <tr><td class="num-col">9</td><td class="content-col">Member of Technical Programme Committee INFOTECH 2020, Serbia.</td></tr>
+                        <tr><td class="num-col">10</td><td class="content-col">Co-Chair of Local Arrangements Committee – The 1st International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME 2021), 07–08 October 2021, Mauritius.</td></tr>
+                        <tr><td class="num-col">11</td><td class="content-col">General Co-Chair, The 4th IEEE International Conference on Emerging Trends in Electrical, Electronic and Communications Engineering (ELECOM 2022), 22–24 November 2022, Balaclava, Mauritius.</td></tr>
+                        <tr><td class="num-col">12</td><td class="content-col">Co-Chair of Arrangements Committee – The 2nd International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME 2022), 16–18 November 2022, Maldives.</td></tr>
+                        <tr><td class="num-col">13</td><td class="content-col">Organizing Committee Member of the 1st International IEEE EDAPS Mini Workshop on Emerging Trends in Semiconductor IC Packaging, IEEE EDAPS Mini Workshop, 22 Nov 2022, Mauritius.</td></tr>
+                        <tr><td class="num-col">14</td><td class="content-col">Conference Publication Chair of the 3rd International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME 2023), 19–21 July 2023, Tenerife, Spain.</td></tr>
+                        <tr><td class="num-col">15</td><td class="content-col">Co-Chair of Local Arrangements Committee – The IEEE EPS (Electronics Packaging Society) EDAPS 2023 Conference held on December 12–14, 2023 at Wolmar, Flic-en-Flac, Republic of Mauritius.</td></tr>
+                        <tr><td class="num-col">16</td><td class="content-col">General Chair of the 5th International Conference on Emerging Trends in Electrical, Electronic and Communications Engineering (ELECOM 2024) 20–22 November 2024, Mauritius.</td></tr>
+                        <tr><td class="num-col">17</td><td class="content-col">International Chair of the International Conference on Intelligent Systems for Sustainable Future (ISSF 2025) 12 to 13 March 2025, School of Engineering and Technology CHRIST (Deemed to be University), Bangalore, India.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 3. Keynote Speeches at International Conferences -->
+        <!-- ========================================================= -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-microphone"></i> Keynote Speeches at International Conferences
+            </div>
+            <div class="card">
+                <table class="engagement-table">
+                    <thead>
+                        <tr><th>#</th><th>Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="num-col">1</td>
+                            <td class="content-col">"A cloud based IoT System for Real-Time and Adaptive Weather Forecasting in Mauritius" at the 2020 INFOTECH ICT CONFERENCE AND EXHIBITION, 24 June 2020, Republic of Serbia.</td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">2</td>
+                            <td class="content-col">"AI Enabled Green 5G and 6G Communications" at the 3rd International Conference on Machine Learning and Intelligent Systems (MLIS 2021), Beijing, China, November 8th–11th, 2021. <a href="http://2021.machinelearningconf.org/Speaker/Details?id=541" target="_blank">http://2021.machinelearningconf.org/Speaker/Details?id=541</a></td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">3</td>
+                            <td class="content-col">"Intelligent Connectivity as an Enabler for the UN Sustainable Development Goals" at the 2nd International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME 2022), 16–18 November, 2022, Maldives.</td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">4</td>
+                            <td class="content-col">"Artificial Intelligence as an Enabler for 5G and Beyond 5G Communication Systems" at the IEEE EPS (Electronics Packaging Society) EDAPS 2023 Conference held on December 12–14, 2023 at Wolmar, Flic-en-Flac, Republic of Mauritius.</td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">5</td>
+                            <td class="content-col">"Driving INDUSTRY 4.0 with 5G Mobile Communications" at the International Conference on Intelligent Systems for Sustainable Future (ISSF 2025) 12 to 13 March 2025, School of Engineering and Technology CHRIST (Deemed to be University), Bangalore, India.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 4. Lead Reviewer / Reviewer of International Projects / Journals -->
+        <!-- ========================================================= -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-star"></i> Lead Reviewer / Reviewer of International Projects / Journals
+            </div>
+            <div class="card">
+                <table class="engagement-table">
+                    <thead>
+                        <tr><th>#</th><th>Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="num-col">1</td><td class="content-col">Lead Reviewer for one project of the Science Fund of the Republic of Serbia in 2019.</td></tr>
+                        <tr><td class="num-col">2</td><td class="content-col">Reviewer for two projects of the Science Fund of the Republic of Serbia in 2019.</td></tr>
+                        <tr><td class="num-col">3</td><td class="content-col">Lead Reviewer for one project of the Science Fund of the Republic of Serbia in 2021.</td></tr>
+                        <tr><td class="num-col">4</td><td class="content-col">Reviewer for two projects of the Science Fund of the Republic of Serbia in 2021.</td></tr>
+                        <tr><td class="num-col">5</td><td class="content-col">Reviewed papers for several international journals from publishers such as Springer, Elsevier, IEEE, Wiley, Emerald and Taylor &amp; Francis.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- HOME BUTTON -->
+        <div class="home-btn-wrap">
+            <a href="index.html" class="home-btn"><i class="fas fa-house"></i> &nbsp; Return to Home Page</a>
+        </div>
+
+    </div> <!-- end container -->
+
+    <footer>
+        <h3>Associate Professor (Dr) Tulsi Pawan Fowdur</h3>
+        <br>Department of Electrical and Electronic Engineering<br>Faculty of Engineering<br>University of Mauritius
+        <br><br>© 2026 All Rights Reserved
+    </footer>
+
+    <script>
+        // fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.animate([
+                        { opacity: 0, transform: "translateY(40px)" },
+                        { opacity: 1, transform: "translateY(0px)" }
+                    ], { duration: 700, fill: "forwards" });
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll(".section").forEach(s => observer.observe(s));
+
+        // scroll-to-top button
+        const btn = document.createElement("button");
+        btn.innerHTML = "<i class='fas fa-arrow-up'></i>";
+        btn.style.position = "fixed";
+        btn.style.bottom = "25px";
+        btn.style.right = "25px";
+        btn.style.width = "55px";
+        btn.style.height = "55px";
+        btn.style.borderRadius = "50%";
+        btn.style.border = "none";
+        btn.style.background = "#0d3b73";
+        btn.style.color = "white";
+        btn.style.fontSize = "20px";
+        btn.style.cursor = "pointer";
+        btn.style.display = "none";
+        btn.style.boxShadow = "0 8px 20px rgba(0,0,0,.3)";
+        btn.style.transition = ".3s";
+        document.body.appendChild(btn);
+        window.addEventListener("scroll", () => {
+            btn.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+        btn.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+
+</body>
+</html>

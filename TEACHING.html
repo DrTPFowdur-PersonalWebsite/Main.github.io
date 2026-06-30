@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Activities | Dr Tulsi Pawan Fowdur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #eef3f8;
+            color: #1e2a3a;
+            line-height: 1.7;
+        }
+        header {
+            background: linear-gradient(135deg, #08254e, #1557a5);
+            color: white;
+            padding: 50px 8%;
+            box-shadow: 0 8px 25px rgba(0,0,0,.25);
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+        .header-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid white;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,.35);
+        }
+        .header-text {
+            flex: 1;
+        }
+        .header-text h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .header-text h2 {
+            font-weight: 400;
+            color: #FFD54F;
+            margin-bottom: 20px;
+        }
+        .header-text p {
+            font-size: 18px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        /* section */
+        .section {
+            margin-bottom: 55px;
+            animation: fadeUp .8s ease;
+        }
+        .section-title {
+            background: #0d3b73;
+            color: white;
+            padding: 18px 25px;
+            font-size: 28px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.12);
+            overflow-x: auto;
+        }
+
+        /* tables */
+        .teaching-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            min-width: 600px;
+        }
+        .teaching-table thead th {
+            background: #0d3b73;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+        .teaching-table tbody td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e6edf5;
+        }
+        .teaching-table tbody tr:hover {
+            background: #f4f8fe;
+        }
+        .teaching-table .level-badge {
+            background: #dce6f2;
+            color: #0d3b73;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+        }
+        .module-code {
+            font-weight: 500;
+            color: #0d3b73;
+        }
+        .programme-text {
+            font-size: 14px;
+        }
+
+        /* supervision table – two columns exactly as in doc */
+        .supervision-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+        .supervision-table thead th {
+            background: #0d3b73;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+        .supervision-table tbody td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e6edf5;
+        }
+        .supervision-table tbody tr:hover {
+            background: #f4f8fe;
+        }
+        .supervision-table .count-badge {
+            background: #e9eff8;
+            color: #0d3b73;
+            font-weight: 600;
+            padding: 0 16px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        .total-supervision {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0d3b73;
+            background: #e9eff8;
+            padding: 10px 24px;
+            border-radius: 40px;
+            display: inline-block;
+        }
+
+        /* curriculum – sequential list */
+        .curriculum-seq {
+            list-style: none;
+            padding-left: 0;
+            margin: 6px 0;
+        }
+        .curriculum-seq li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            border-bottom: 1px solid #f0f4fa;
+            font-weight: 400;
+        }
+        .curriculum-seq li::before {
+            content: counter(item) ".";
+            counter-increment: item;
+            color: #0d3b73;
+            font-weight: 600;
+            position: absolute;
+            left: 2px;
+        }
+        .curriculum-seq {
+            counter-reset: item;
+        }
+        .curriculum-seq li:last-child {
+            border-bottom: none;
+        }
+
+        /* seminars */
+        .seminars-list {
+            padding-left: 6px;
+        }
+        .seminars-list li {
+            list-style: none;
+            padding: 8px 0 8px 32px;
+            position: relative;
+            border-bottom: 1px solid #f0f4fa;
+        }
+        .seminars-list li::before {
+            content: "◆";
+            color: #1557a5;
+            font-size: 14px;
+            position: absolute;
+            left: 4px;
+        }
+
+        /* external examiner */
+        .examiner-item {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            border-bottom: 1px solid #f0f4fa;
+        }
+        .examiner-item::before {
+            content: "▹";
+            color: #0d3b73;
+            font-weight: 700;
+            position: absolute;
+            left: 4px;
+        }
+        .examiner-item:last-child {
+            border-bottom: none;
+        }
+
+        /* short courses */
+        .course-item {
+            background: #f7faff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border-left: 5px solid #0d3b73;
+        }
+        .course-item strong {
+            color: #0d3b73;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .home-btn-wrap {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .home-btn {
+            display: inline-block;
+            background: #0d3b73;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 40px;
+            transition: .35s;
+            box-shadow: 0 10px 25px rgba(0,0,0,.25);
+        }
+        .home-btn:hover {
+            background: #1557a5;
+            transform: translateY(-4px);
+        }
+
+        footer {
+            margin-top: 70px;
+            background: #08254e;
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+        footer h3 {
+            font-weight: 500;
+        }
+
+        @media (max-width: 700px) {
+            .header-container { flex-direction: column; text-align: center; }
+            .teaching-table { font-size: 14px; min-width: 480px; }
+            .supervision-table { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="Dr-T.P.Fowdur-Picture.jpg" alt="Dr Tulsi Pawan Fowdur">
+            <div class="header-text">
+                <h1>Associate Professor (Dr) Tulsi Pawan Fowdur</h1>
+                <h2>Teaching Activities</h2>
+                <p>Department of Electrical and Electronic Engineering<br>Faculty of Engineering<br>University of Mauritius</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 1 MODULES TAUGHT -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-chalkboard-teacher"></i> Modules Taught
+            </div>
+            <div class="card">
+                <table class="teaching-table">
+                    <thead>
+                        <tr>
+                            <th>Module Name</th>
+                            <th>Module Code</th>
+                            <th>Programme</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Programming for Telecommunication Systems 1</td><td class="module-code">ELEC 1114</td><td class="programme-text">B.Eng(Hons) Telecommunications Engineering with Networking</td><td><span class="level-badge">1</span></td></tr>
+                        <tr><td>Programming for Telecommunication Systems 2</td><td class="module-code">ELEC 1214</td><td class="programme-text">B.Eng(Hons) Telecommunications Engineering with Networking</td><td><span class="level-badge">1</span></td></tr>
+                        <tr><td>Telecommunications Protocol Development</td><td class="module-code">ELEC 2120</td><td class="programme-text">B.Eng(Hons) Telecommunications Engineering with Networking</td><td><span class="level-badge">2</span></td></tr>
+                        <tr><td>Telecommunications Applications Development 1</td><td class="module-code">ELEC 2216</td><td class="programme-text">B.Eng(Hons) Telecommunications Engineering with Networking</td><td><span class="level-badge">2</span></td></tr>
+                        <tr><td>Telecommunications Applications Development 2</td><td class="module-code">ELEC 3111</td><td class="programme-text">B.Eng(Hons) Telecommunications Engineering with Networking</td><td><span class="level-badge">3</span></td></tr>
+                        <tr><td>Big Data Analytics and AI</td><td class="module-code">ELEC 4216</td><td class="programme-text">B.Eng(Hons) Telecommunications Engineering with Networking</td><td><span class="level-badge">4</span></td></tr>
+                        <tr><td>Data Communications and Networking</td><td class="module-code">ELEC 4102</td><td class="programme-text">B.Eng(Hons) Electronic and Communication Engineering</td><td><span class="level-badge">4</span></td></tr>
+                        <tr><td>Analytical Methods</td><td class="module-code">ELEC 1060</td><td class="programme-text">Bsc (Hons) Electronic with Computer Science / Bsc(Hons) Information and Communication Technologies</td><td><span class="level-badge">1</span></td></tr>
+                        <tr><td>Discrete Mathematics and Sampling Techniques</td><td class="module-code">ELEC 1061</td><td class="programme-text">Bsc (Hons) Electronic with Computer Science / Bsc(Hons) Information and Communication Technologies</td><td><span class="level-badge">1</span></td></tr>
+                        <tr><td>Coding for Data Transmission</td><td class="module-code">ELEC 3063</td><td class="programme-text">Bsc (Hons) Electronic with Computer Science / Bsc(Hons) Information and Communication Technologies</td><td><span class="level-badge">3</span></td></tr>
+                        <tr><td>Digital Logic</td><td class="module-code">ELEC 1051</td><td class="programme-text">Bsc (Hons) Computer Science</td><td><span class="level-badge">1</span></td></tr>
+                        <tr><td>Telecommunication Networks</td><td class="module-code">ELEC 3053</td><td class="programme-text">Bsc (Hons) Electronic with Computer Science</td><td><span class="level-badge">3</span></td></tr>
+                        <tr><td>Broadcasting Technologies</td><td class="module-code">ELEC 4034</td><td class="programme-text">B.Eng(Hons) Electronic and Communication Engineering</td><td><span class="level-badge">4</span></td></tr>
+                        <tr><td>Basics of Digital Communications</td><td class="module-code">ELEC 2052</td><td class="programme-text">Bsc (Hons) Electronic with Computer Science</td><td><span class="level-badge">2</span></td></tr>
+                        <tr><td>Data Communications and Networking Technologies</td><td class="module-code">ELEC 3051</td><td class="programme-text">Bsc (Hons) Electronic with Computer Science / Bsc(Hons) Information and Communication Technologies</td><td><span class="level-badge">2</span></td></tr>
+                        <tr><td>Signals and Systems</td><td class="module-code">ELEC 2034</td><td class="programme-text">B.Eng(Hons) Mechatronics</td><td><span class="level-badge">2</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 2 FINAL YEAR PROJECT SUPERVISION – two columns exactly as in doc -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-user-graduate"></i> Undergraduate Final Year Project Supervision
+            </div>
+            <div class="card">
+                <table class="supervision-table">
+                    <thead>
+                        <tr>
+                            <th>Academic year</th>
+                            <th>Number of projects supervised</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2024-2025</td><td><span class="count-badge">5</span></td></tr>
+                        <tr><td>2023-2024</td><td><span class="count-badge">6</span></td></tr>
+                        <tr><td>2022-2023</td><td><span class="count-badge">5</span></td></tr>
+                        <tr><td>2020-2021</td><td><span class="count-badge">5</span></td></tr>
+                        <tr><td>2019-2020</td><td><span class="count-badge">6</span></td></tr>
+                        <tr><td>2018-2019</td><td><span class="count-badge">5</span></td></tr>
+                        <tr><td>2017-2018</td><td><span class="count-badge">5</span></td></tr>
+                        <tr><td>2016-2017</td><td><span class="count-badge">5</span></td></tr>
+                        <tr><td>2015-2016</td><td><span class="count-badge">6</span></td></tr>
+                        <tr><td>2014-2015</td><td><span class="count-badge">5</span></td></tr>
+                        <tr><td>2013-2014</td><td><span class="count-badge">10</span></td></tr>
+                        <tr><td>2012-2013</td><td><span class="count-badge">10</span></td></tr>
+                        <tr><td>2011-2012</td><td><span class="count-badge">8</span></td></tr>
+                        <tr><td>2010-2011</td><td><span class="count-badge">6</span></td></tr>
+                        <tr><td>2009-2010</td><td><span class="count-badge">5</span></td></tr>
+                    </tbody>
+                </table>
+                <div class="total-supervision"><i class="fas fa-arrow-right"></i> TOTAL: 92 projects</div>
+            </div>
+        </section>
+
+        <!-- 3 CURRICULUM DEVELOPMENT – sequential list -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-pencil-alt"></i> Curriculum Development
+            </div>
+            <div class="card">
+                <ol class="curriculum-seq">
+                    <li>Msc Telecommunications Management</li>
+                    <li>B.Eng (Hons) Electrical and Electronic Engineering (E430)</li>
+                    <li>B.Eng(Hons) Electronic and Communication Engineering (E431)</li>
+                    <li>B.Eng(Hons) Telecommunications Engineering with Networking (E432)</li>
+                    <li>Msc Telecommunication Systems with IoT (E538).</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 4 SEMINARS AND WORKSHOPS -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-chalkboard"></i> Seminars & Workshops on Teaching & Learning
+            </div>
+            <div class="card">
+                <ul class="seminars-list">
+                    <li>Engineering Accreditation Board (EAB) Evaluators training event, 23 Jan 2026, Flying Dodo, Bagatelle.</li>
+                    <li>UoM Digital Credentials Initiative & Workshop on Inclusive Education Technologies, 29 May 2025, UoM.</li>
+                    <li>Online Training for Evaluators by Dr. Agrawal - 19th November and 3rd Dec 2022.</li>
+                    <li>Virtual Workshop on Online Examinations and Assessment - February-2022</li>
+                    <li>Accreditation Training Workshop 14-15 June 2021 (Online).</li>
+                    <li>Training on Learning Design for Virtual/Blended Learning and on Video Editing - September-2020</li>
+                    <li>Training workshop to assist UoM staff to migrate to LCCS - 31 July 2019</li>
+                    <li>Workshop on online teaching and learning platforms - 26 June 2019</li>
+                    <li>Migration to LCCS Training Workshop by IEM-ECSA - April 2019.</li>
+                    <li>Training Workshop on Students' Learning Outcomes delivered by Prof Linda van Ryneveld from the University of Pretoria - 22 November 2018.</li>
+                    <li>Workshop on outcome-based learning (03 August 2017) and a comprehensive report on the workshop was submitted to Faculty Board.</li>
+                    <li>Accreditation workshop (6-7 June 2013)</li>
+                    <li>Moodle Hand-on Workshop (24-26 July 2012)</li>
+                    <li>TAL 5010 (2011)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5 EXTERNAL EXAMINER -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-user-tie"></i> External Examiner
+            </div>
+            <div class="card">
+                <div class="examiner-item">Msc by Research Thesis (May 2024) for the University of Cape Town, South Africa.</div>
+                <div class="examiner-item">PhD Thesis (August 2017) for the Visvesvaraya Technological University, India.</div>
+            </div>
+        </section>
+
+        <!-- SHORT COURSES -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-certificate"></i> Short Courses (Lead Consultant)
+            </div>
+            <div class="card">
+                <div class="course-item"><strong>1.</strong> Short course on Basic Telecommunications Applications Programming (2017) – Reference N3-2017-1482.</div>
+                <div class="course-item"><strong>2.</strong> Short course on Advanced Telecommunications Applications Programming (2018) – Reference N3-2018-1570.</div>
+                <div class="course-item"><strong>3.</strong> Short-Course – Fundamentals of Machine Learning and AI with Web Application Development (2024) (Reference: N3 2024 2149).</div>
+                <div class="course-item"><strong>4.</strong> Short-Course on 'Fundamentals of Satellite Based Earth Observations in Monitoring the UN Sustainable Development Goals (2024) (Reference: N3 2024 2174).</div>
+            </div>
+        </section>
+
+        <!-- HOME BUTTON -->
+        <div class="home-btn-wrap">
+            <a href="index.html" class="home-btn"><i class="fas fa-house"></i> &nbsp; Return to Home Page</a>
+        </div>
+
+    </div> <!-- end container -->
+
+    <footer>
+        <h3>Associate Professor (Dr) Tulsi Pawan Fowdur</h3>
+        <br>Department of Electrical and Electronic Engineering<br>Faculty of Engineering<br>University of Mauritius
+        <br><br>© 2026 All Rights Reserved
+    </footer>
+
+    <script>
+        // fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.animate([
+                        { opacity: 0, transform: "translateY(40px)" },
+                        { opacity: 1, transform: "translateY(0px)" }
+                    ], { duration: 700, fill: "forwards" });
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll(".section").forEach(s => observer.observe(s));
+
+        // scroll-to-top button
+        const btn = document.createElement("button");
+        btn.innerHTML = "<i class='fas fa-arrow-up'></i>";
+        btn.style.position = "fixed";
+        btn.style.bottom = "25px";
+        btn.style.right = "25px";
+        btn.style.width = "55px";
+        btn.style.height = "55px";
+        btn.style.borderRadius = "50%";
+        btn.style.border = "none";
+        btn.style.background = "#0d3b73";
+        btn.style.color = "white";
+        btn.style.fontSize = "20px";
+        btn.style.cursor = "pointer";
+        btn.style.display = "none";
+        btn.style.boxShadow = "0 8px 20px rgba(0,0,0,.3)";
+        btn.style.transition = ".3s";
+        document.body.appendChild(btn);
+        window.addEventListener("scroll", () => {
+            btn.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+        btn.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+
+</body>
+</html>
