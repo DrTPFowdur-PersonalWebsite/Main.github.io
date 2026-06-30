@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books | Dr Tulsi Pawan Fowdur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #eef3f8;
+      color: #333;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #08254e, #1557a5);
+      color: white;
+      padding: 50px 8%;
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      flex-wrap: wrap;
+    }
+    .header-container img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid white;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    .header-text {
+      flex: 1;
+    }
+    .header-text h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .header-text h2 {
+      font-weight: 400;
+      color: #FFD54F;
+      margin-bottom: 20px;
+    }
+    .header-text p {
+      font-size: 18px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 25px;
+    }
+    .section {
+      margin-bottom: 55px;
+      animation: fadeUp .8s ease;
+    }
+    .section-title {
+      background: #0d3b73;
+      color: white;
+      padding: 18px 25px;
+      font-size: 28px;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+    }
+    .book-item {
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+      padding: 25px 0;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .book-item:last-child {
+      border-bottom: none;
+    }
+    .book-cover {
+      flex: 0 0 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .book-cover img {
+      width: 120px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      object-fit: contain;
+      max-height: 160px;
+    }
+    .book-cover .no-cover {
+      width: 120px;
+      height: 160px;
+      background: #eaeef3;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #777;
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 6px;
+    }
+    .book-info {
+      flex: 1;
+    }
+    .book-info strong {
+      display: block;
+      font-size: 20px;
+      color: #0d3b73;
+      margin-bottom: 4px;
+    }
+    .book-info .editors {
+      font-weight: 500;
+      color: #1f4f8a;
+      font-size: 16px;
+    }
+    .book-info .publisher {
+      font-weight: 400;
+      color: #444;
+      margin-top: 4px;
+    }
+    .book-info .isbn {
+      font-size: 14px;
+      color: #555;
+      background: #f0f4fa;
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-top: 6px;
+    }
+    .book-info .links {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .book-info .links a {
+      background: #0d3b73;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: .3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .book-info .links a:hover {
+      background: #1557a5;
+      transform: translateY(-2px);
+    }
+    .book-info .overview {
+      margin-top: 12px;
+      font-size: 15px;
+      background: #f7faff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border-left: 4px solid #0d3b73;
+      color: #1e2a3a;
+    }
+    .book-info .overview i {
+      color: #0d3b73;
+      margin-right: 6px;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 800px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .book-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .book-cover {
+        flex: unset;
+        width: 100%;
+        align-items: center;
+      }
+      .book-info .links {
+        justify-content: center;
+      }
+      .book-info .overview {
+        text-align: left;
+      }
+    }
+    /* home button style */
+    .home-btn-wrap {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .home-btn {
+      display: inline-block;
+      background: #0d3b73;
+      color: white;
+      padding: 16px 40px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 40px;
+      transition: .35s;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .home-btn:hover {
+      background: #1557a5;
+      transform: translateY(-4px);
+    }
+    footer {
+      margin-top: 70px;
+      background: #08254e;
+      color: white;
+      text-align: center;
+      padding: 35px;
+    }
+    footer h3 {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="Dr-T.P.Fowdur-Picture.jpg" alt="Dr Tulsi Pawan Fowdur">
+      <div class="header-text">
+        <h1>Associate Professor (Dr) Tulsi Pawan Fowdur</h1>
+        <h2>Books</h2>
+        <p>Department of Electrical and Electronic Engineering<br>Faculty of Engineering<br>University of Mauritius</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section class="section">
+      <div class="section-title">
+        <i class="fas fa-book-open"></i> Books (Edited & Authored)
+      </div>
+      <div class="card">
+
+        <!-- BOOK 1 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image1.jpg" alt="Augmented and Virtual Reality in Healthcare cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-book"></i> AR/VR Healthcare</div>
+          </div>
+          <div class="book-info">
+            <strong>Augmented and Virtual Reality in Healthcare</strong>
+            <div class="editors">Hari Murthy, Kukatlapalli Pradeep Kumar, Tulsi Pawan Fowdur and Aynur Unal (Eds)</div>
+            <div class="publisher">Wiley Scrivener Publishing LLC, November 2025. ISBN: 978-1-394-30283-3.</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 978-1-394-30283-3</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> Augmented reality (AR) and virtual reality (VR) have profoundly impacted the healthcare sector, introducing ground-breaking applications ranging from surgical simulations and pain management to mental health therapies and patient education. This book delves into the various applications of AR and VR, including deep learning, surgical training, teleconsultation, and patient rehabilitation. Blending theoretical insights with practical case studies, it provides a deeper understanding of how these technologies are being integrated into medical practices to improve outcomes, enhance patient care, and train healthcare professionals. It also explores cutting-edge developments, such as AI-powered AR systems and VR-based mental health treatments, highlighting the future of healthcare innovation.
+            </div>
+            <div class="links">
+              <a href="https://www.wiley.com/en-ie/Augmented+and+Virtual+Reality+in+Healthcare-p-9781394302833" target="_blank"><i class="fas fa-external-link-alt"></i> Wiley</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 2 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image2.jpg" alt="Intelligent and Sustainable Engineering Systems for Industry 4.0 cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-industry"></i> Industry 4.0</div>
+          </div>
+          <div class="book-info">
+            <strong>Intelligent and Sustainable Engineering Systems for Industry 4.0 and Beyond</strong>
+            <div class="editors">Tulsi Pawan Fowdur, Dragorad A. Milovanovic, and Zoran S. Bojkovic (Eds)</div>
+            <div class="publisher">CRC Press, 1st Edition, February 21, 2025. ISBN 9781032840697</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 978-1-032-84069-7</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> The Fourth Industrial Revolution, Industry 4.0, aims to significantly improve the flexibility, versatility, usability and efficiency of future smart factories. However, the concept of Industry 4.0 is not only limited to the factory but also encompasses the entire life cycle of the product. Industry 4.0 delivers seamless vertical and horizontal integration down the entire value chain and across all layers of the automation pyramid. This multidisciplinary book explores the application of AI and machine learning as well as sustainable engineering systems, which can be the main drivers for Industry 4.0 and beyond and have a significant impact on the UN SDGs.
+            </div>
+            <div class="links">
+              <a href="https://www.routledge.com/Intelligent-and-Sustainable-Engineering-Systems-for-Industry-40-and-Beyond/Fowdur-Milovanovic-Bojkovic/p/book/9781032840697" target="_blank"><i class="fas fa-external-link-alt"></i> Routledge</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 3 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image3.jpg" alt="AI Solutions for the UN SDGs cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-globe"></i> AI & UN SDGs</div>
+          </div>
+          <div class="book-info">
+            <strong>AI Solutions for the United Nations Sustainable Development Goals - A Practical Approach Using JavaScript</strong>
+            <div class="editors">Tulsi Pawan Fowdur and Lavesh Babooram (Eds)</div>
+            <div class="publisher">Apress Berkeley, CA, 1st Edition, 17 December 2024. eBook ISBN 979-8-8688-0536-3</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 979-8-8688-0536-3</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> Learn the United Nations Sustainable Development Goals (UN SDGs) and see how machine learning can significantly contribute to their realization. This book imparts both theoretical knowledge and hands-on experience in comprehending and constructing machine learning-based applications for addressing multiple UN SDGs using JavaScript. Detailed case studies examine challenges related to renewable energy, agriculture, health, environment, climate change, water quality, air quality, and telecommunications.
+            </div>
+            <div class="links">
+              <a href="https://link.springer.com/book/10.1007/979-8-8688-0536-3" target="_blank"><i class="fas fa-external-link-alt"></i> Springer</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 4 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image4.jpg" alt="5G NR Modelling in MATLAB cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-signal"></i> 5G NR MATLAB</div>
+          </div>
+          <div class="book-info">
+            <strong>5G NR Modelling in MATLAB: Network Architecture, Protocols, and Physical Layer</strong>
+            <div class="editors">Tulsi Pawan Fowdur, Madhavsingh Indoonundon, Dragorad A. Milovanovic, Zoran S. Bojkovic</div>
+            <div class="publisher">CRC Press, 1st Edition, July 3, 2024. ISBN 9781032720753</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 978-1-032-72075-3</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> Provides an in-depth coverage of the network architecture of 5G by considering both the network reference point architecture and the service-based architecture. It also describes all the user and control plane protocols including the different standalone and non-standalone architecture options of 5G. The physical layer signal processing blocks of 5G-NR are covered in depth with elaborate numerical examples to illustrate the functioning of each block in the 5G downlink transmitter and receiver chain.
+            </div>
+            <div class="links">
+              <a href="https://www.routledge.com/5G-NR-Modelling-in-MATLAB-Network-Architecture-Protocols-and-Physical/Fowdur-Indoonundon-Milovanovic-Bojkovic/p/book/9781032720753" target="_blank"><i class="fas fa-external-link-alt"></i> Routledge</a>
+              <a href="https://www.mathworks.com/academia/books/5g-nr-modelling-in-matlab-fowdur.html" target="_blank"><i class="fas fa-external-link-alt"></i> MathWorks</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 5 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image5.jpg" alt="Machine Learning For Network Traffic and Video Quality Analysis cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-network-wired"></i> ML Traffic & VQA</div>
+          </div>
+          <div class="book-info">
+            <strong>Machine Learning For Network Traffic and Video Quality Analysis - Develop and Deploy Applications Using JavaScript and Node.js</strong>
+            <div class="editors">Tulsi Pawan Fowdur and Lavesh Babooram</div>
+            <div class="publisher">Apress Berkeley, CA, 1st Edition, 19 June 2024. eBook ISBN 979-8-8688-0354-3. DOI: 10.1007/979-8-8688-0354-3</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 979-8-8688-0354-3</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> This book offers both theoretical insights and hands-on experience in understanding and building machine learning-based Network Traffic Monitoring and Analysis (NTMA) and Video Quality Assessment (VQA) applications using JavaScript. JavaScript provides the flexibility to deploy these applications across various devices and web browsers. By the end, you will understand NTMA and VQA concepts and be able to apply machine learning to both domains and develop and deploy your own applications using JavaScript and Node.js.
+            </div>
+            <div class="links">
+              <a href="https://link.springer.com/book/10.1007/979-8-8688-0354-3" target="_blank"><i class="fas fa-external-link-alt"></i> Springer</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 6 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image6.jpg" alt="Artificial Intelligence, Engineering Systems and Sustainable Development cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-robot"></i> AI & SDGs</div>
+          </div>
+          <div class="book-info">
+            <strong>Artificial Intelligence, Engineering Systems and Sustainable Development: Driving the UN SDGs</strong>
+            <div class="editors">Tulsi Pawan Fowdur, Satyadev Rosunee, Robert T. F. Ah King, Pratima Jeetah and Mahendra Gooroochurn (eds)</div>
+            <div class="publisher">Emerald Publishing Limited, ISBN: 9781837535415, 18 Jan 2024.</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 978-1-83753-541-5</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> Development in any country is impossible if reliable and affordable energy, safe water and sanitation, as well as telecommunication facilities, are not easily accessible. Artificial intelligence and machine learning techniques are now widely used in all branches of engineering to build and optimize systems. The combination of AI and engineering can indeed act as a real catalyst to achieve the UN SDGs.
+            </div>
+            <div class="links">
+              <a href="https://books.emeraldinsight.com/book/detail/artificial-intelligence-engineering-systems-and-sustainable-development/?k=9781837535415" target="_blank"><i class="fas fa-external-link-alt"></i> Emerald</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 7 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image7.jpg" alt="Driving 5G Mobile Communications with AI towards 6G cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-wifi"></i> 5G AI towards 6G</div>
+          </div>
+          <div class="book-info">
+            <strong>Driving 5G Mobile Communications with Artificial Intelligence towards 6G</strong>
+            <div class="editors">Dragorad A. Milovanovic, Zoran S. Bojkovic, Tulsi Pawan Fowdur (Eds.)</div>
+            <div class="publisher">CRC Press, ISBN 9781032071244, April 6, 2023.</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 978-1-032-07124-4</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> Driving 5G Mobile Communications with Artificial Intelligence towards 6G presents current work and directions of continuous innovation and development in multimedia communications with a focus on services and users. The fifth generation of mobile wireless networks achieved the first deployment by 2020, completed the first phase of evolution in 2022, and started transition phase of 5G-Advanced toward the sixth generation. Towards 6G, machine learning (ML) and artificial intelligence (AI) methods have recently proposed new approaches to modeling, designing, optimizing and implementing systems.
+            </div>
+            <div class="links">
+              <a href="https://www.routledge.com/Driving-5G-Mobile-Communications-with-Artificial-Intelligence-towards-6G/Milovanovic-Bojkovic-Fowdur/p/book/9781032071244" target="_blank"><i class="fas fa-external-link-alt"></i> Routledge</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 8 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image8.jpg" alt="Real-Time Cloud Computing and Machine Learning Applications cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-cloud"></i> Cloud & ML</div>
+          </div>
+          <div class="book-info">
+            <strong>Real-Time Cloud Computing and Machine Learning Applications</strong>
+            <div class="editors">T.P. Fowdur, L. Babooram, M.N.I. Nazir Rosun, and M. Indoonundon</div>
+            <div class="publisher">Nova Science Publishers, 19 July 2021, Computer Science, Technology and Applications Book Series, ISBN: 978-1-53619-813-3</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 978-1-53619-813-3</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> With the emergence of revolutionary technological standards such as 5G and Industry 4.0, real time applications which require both cloud computing and machine learning are becoming increasingly common. The main purpose of this book is to provide in-depth coverage of the programming methodologies and configurations required in developing real-time applications that require machine learning algorithms to be hosted on cloud computing platforms to leverage storage and computing resources.
+            </div>
+            <div class="links">
+              <a href="https://novapublishers.com/shop/real-time-cloud-computing-and-machine-learning-applications/" target="_blank"><i class="fas fa-external-link-alt"></i> Nova Publishers</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 9 -->
+        <div class="book-item">
+          <div class="book-cover">
+            <img src="media/image9.jpg" alt="5G Multimedia Communication cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="no-cover" style="display:none;"><i class="fas fa-video"></i> 5G Multimedia</div>
+          </div>
+          <div class="book-info">
+            <strong>5G Multimedia Communication: Technology, Multiservices, and Deployment</strong>
+            <div class="editors">Z. Bojkovic, D. Milovanovic, T.P. Fowdur (Eds.)</div>
+            <div class="publisher">CRC Press, 1st Edition, 1 November 2020. ISBN 9780367178505</div>
+            <div class="isbn"><i class="fas fa-barcode"></i> 978-0-367-17850-5</div>
+            <div class="overview">
+              <i class="fas fa-quote-left"></i> In bringing to the readers the book 5G Multimedia Communication: Technology, Multiservices and Deployment, the aim is to present current work and direction on the challenging subject of multimedia communications, with theoretical and practical roots. The book is divided into three major parts: Critical enabling technology, Multiservices network, and Deployment scenarios, covering green communication, channel modeling, MIMO, ML-based networks, network slicing, MEC, satellite and drone communication, smart cities, intelligent transportation, healthcare, and more.
+            </div>
+            <div class="links">
+              <a href="https://www.routledge.com/5G-Multimedia-Communication-Technology-Multiservices-and-Deployment/Bojkovic-Milovanovic-Fowdur/p/book/9780367178505" target="_blank"><i class="fas fa-external-link-alt"></i> Routledge</a>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- end card -->
+    </section>
+
+    <!-- HOME BUTTON -->
+    <div class="home-btn-wrap">
+      <a href="index.html" class="home-btn"><i class="fas fa-house"></i> &nbsp; Return to Home Page</a>
+    </div>
+
+  </div> <!-- end container -->
+
+  <footer>
+    <h3>Associate Professor (Dr) Tulsi Pawan Fowdur</h3>
+    <br>Department of Electrical and Electronic Engineering<br>Faculty of Engineering<br>University of Mauritius
+    <br><br>© 2026 All Rights Reserved
+  </footer>
+
+  <script>
+    // fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.animate([
+            { opacity: 0, transform: "translateY(40px)" },
+            { opacity: 1, transform: "translateY(0px)" }
+          ], { duration: 700, fill: "forwards" });
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".section").forEach(s => observer.observe(s));
+
+    // scroll-to-top button
+    const btn = document.createElement("button");
+    btn.innerHTML = "<i class='fas fa-arrow-up'></i>";
+    btn.style.position = "fixed";
+    btn.style.bottom = "25px";
+    btn.style.right = "25px";
+    btn.style.width = "55px";
+    btn.style.height = "55px";
+    btn.style.borderRadius = "50%";
+    btn.style.border = "none";
+    btn.style.background = "#0d3b73";
+    btn.style.color = "white";
+    btn.style.fontSize = "20px";
+    btn.style.cursor = "pointer";
+    btn.style.display = "none";
+    btn.style.boxShadow = "0 8px 20px rgba(0,0,0,.3)";
+    btn.style.transition = ".3s";
+    document.body.appendChild(btn);
+    window.addEventListener("scroll", () => {
+      btn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    btn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+</body>
+</html>

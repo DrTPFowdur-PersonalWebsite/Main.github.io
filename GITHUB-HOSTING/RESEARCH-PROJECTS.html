@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Projects | Dr Tulsi Pawan Fowdur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #eef3f8;
+            color: #1e2a3a;
+            line-height: 1.7;
+        }
+        header {
+            background: linear-gradient(135deg, #08254e, #1557a5);
+            color: white;
+            padding: 50px 8%;
+            box-shadow: 0 8px 25px rgba(0,0,0,.25);
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+        .header-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid white;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,.35);
+        }
+        .header-text {
+            flex: 1;
+        }
+        .header-text h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .header-text h2 {
+            font-weight: 400;
+            color: #FFD54F;
+            margin-bottom: 20px;
+        }
+        .header-text p {
+            font-size: 18px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+        .section {
+            margin-bottom: 55px;
+            animation: fadeUp .8s ease;
+        }
+        .section-title {
+            background: #0d3b73;
+            color: white;
+            padding: 18px 25px;
+            font-size: 28px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title .badge {
+            font-size: 16px;
+            font-weight: 400;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 16px;
+            border-radius: 30px;
+            margin-left: 10px;
+        }
+        .card {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.12);
+            overflow-x: auto;
+        }
+
+        .project-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14.5px;
+            min-width: 700px;
+        }
+        .project-table thead th {
+            background: #0d3b73;
+            color: white;
+            padding: 12px 12px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .project-table tbody td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e6edf5;
+            vertical-align: top;
+        }
+        .project-table tbody tr:hover {
+            background: #f4f8fe;
+        }
+        .project-table .num-col {
+            width: 45px;
+            text-align: center;
+            font-weight: 600;
+            color: #0d3b73;
+            white-space: nowrap;
+        }
+        .project-table .content-col {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .project-table .content-col strong {
+            color: #0d3b73;
+        }
+        .project-table .content-col .label {
+            font-weight: 600;
+            color: #1e2a3a;
+            display: inline-block;
+            min-width: 120px;
+        }
+        .project-table .content-col .value {
+            display: inline-block;
+        }
+        .project-table .status-completed {
+            background: #d4edda;
+            color: #155724;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-block;
+        }
+        .project-table .status-ongoing {
+            background: #cce5ff;
+            color: #004085;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-block;
+        }
+        .project-table .status-mou {
+            background: #fff3cd;
+            color: #856404;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .sub-section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0d3b73;
+            margin: 10px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e6edf5;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sub-section-title i {
+            color: #1557a5;
+        }
+
+        .home-btn-wrap {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .home-btn {
+            display: inline-block;
+            background: #0d3b73;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 40px;
+            transition: .35s;
+            box-shadow: 0 10px 25px rgba(0,0,0,.25);
+        }
+        .home-btn:hover {
+            background: #1557a5;
+            transform: translateY(-4px);
+        }
+
+        footer {
+            margin-top: 70px;
+            background: #08254e;
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+        footer h3 {
+            font-weight: 500;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 700px) {
+            .header-container { flex-direction: column; text-align: center; }
+            .card { padding: 15px; }
+            .project-table { font-size: 13px; min-width: 500px; }
+            .project-table thead th { font-size: 13px; padding: 8px; }
+            .project-table tbody td { padding: 10px 8px; }
+            .project-table .content-col .label { min-width: 90px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="Dr-T.P.Fowdur-Picture.jpg" alt="Dr Tulsi Pawan Fowdur">
+            <div class="header-text">
+                <h1>Associate Professor (Dr) Tulsi Pawan Fowdur</h1>
+                <h2>Research Projects</h2>
+                <p>Department of Electrical and Electronic Engineering<br>Faculty of Engineering<br>University of Mauritius</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- ========================================================= -->
+        <!-- COMPLETED PROJECTS -->
+        <!-- ========================================================= -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-check-circle"></i> Externally/Internally Funded Research
+                <span class="badge">Completed</span>
+            </div>
+            <div class="card">
+                <table class="project-table">
+                    <thead>
+                        <tr><th>#</th><th>Project Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="num-col">1</td>
+                            <td class="content-col">
+                                <strong>Identification of Key Employability Skills of Mauritian Graduates in the Age of AI: Silver Bullets for a Successful Career.</strong><br>
+                                <span class="label">Funding Scheme:</span> UoM Internally Funded RFS-F scheme<br>
+                                <span class="label">Project Value:</span> Rs 1,344,400<br>
+                                <span class="label">Duration:</span> 12 Months<br>
+                                <span class="label">Date Started:</span> 10 October 2024<br>
+                                <span class="label">Date Completed:</span> 31 March 2026<br>
+                                <span class="label">Role:</span> Co-Investigator<br>
+                                <span class="label">Status:</span> <span class="status-completed">Completed</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">2</td>
+                            <td class="content-col">
+                                <strong>An AI Based Weather and Landslide Nowcasting System using Multiple Predictor Locations</strong><br>
+                                <span class="label">Funding Scheme:</span> HEC Inter-disciplinary/Inter-institutional Team Based Research Scheme (Ref: HEC/11/4/13/41)<br>
+                                <span class="label">Project Value:</span> Rs 1,737,454<br>
+                                <span class="label">Duration:</span> 23 Months<br>
+                                <span class="label">Date Approved:</span> 09 June 2023<br>
+                                <span class="label">Date Started:</span> 01 July 2023<br>
+                                <span class="label">Date Completed:</span> 21 July 2025<br>
+                                <span class="label">Role:</span> Principal Investigator<br>
+                                <span class="label">Status:</span> <span class="status-completed">Completed</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">3</td>
+                            <td class="content-col">
+                                <strong>Analysing the UN SDGs in Mauritius using Active and Passive Satellite Data with Deep Learning.</strong><br>
+                                <span class="label">Funding Scheme:</span> UoM Internally Funded RFS-F scheme (RF026)<br>
+                                <span class="label">Project Value:</span> Rs 770,000<br>
+                                <span class="label">Duration:</span> 12 Months<br>
+                                <span class="label">Date Funding Approved:</span> 21 June 2024<br>
+                                <span class="label">Date Started:</span> 21 June 2024 [Research collaborative agreement was signed by VC (UoM) on 26/July/2024 and VC (Christ University) on 5 September 2024]<br>
+                                <span class="label">Date Completed:</span> 4th July 2025<br>
+                                <span class="label">Role:</span> Principal Investigator<br>
+                                <span class="label">Status:</span> <span class="status-completed">Completed</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">4</td>
+                            <td class="content-col">
+                                <strong>Design of an Unequal Error Protection Scheme employing Concatenated Coding and Hierarchical Modulation for Multimedia Communications over WiMAX and DVB-T Networks</strong><br>
+                                <span class="label">Funding Scheme:</span> UoM Internally Funded RFS-E Scheme 2019/20<br>
+                                <span class="label">Project Value:</span> Rs 194,324<br>
+                                <span class="label">Duration:</span> 18 Months<br>
+                                <span class="label">Date Approved:</span> 6 April 2020<br>
+                                <span class="label">Date Started:</span> 13 April 2020<br>
+                                <span class="label">Date Completed:</span> 31 March 2022<br>
+                                <span class="label">Role:</span> Co-Investigator<br>
+                                <span class="label">Status:</span> <span class="status-completed">Completed</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">5</td>
+                            <td class="content-col">
+                                <strong>A Low Cost Real-time Road Surface Condition Monitoring and Alert System</strong><br>
+                                <span class="label">Funding Scheme:</span> UoM Internally Funded RFS-A Scheme 2019/20<br>
+                                <span class="label">Project Value:</span> Rs 445,700<br>
+                                <span class="label">Duration:</span> 18 Months<br>
+                                <span class="label">Date Approved:</span> 30 January 2020<br>
+                                <span class="label">Date Started:</span> 03 February 2020<br>
+                                <span class="label">Date Completed:</span> 04 February 2022<br>
+                                <span class="label">Role:</span> Co-Investigator<br>
+                                <span class="label">Status:</span> <span class="status-completed">Completed</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">6</td>
+                            <td class="content-col">
+                                <strong>An Adaptive Short-term Localised Weather Forecasting System for Mauritius</strong><br>
+                                <span class="label">Funding Scheme:</span> MRIC-High Power Computing Research and Innovation Grant (HPCRIG-A06)<br>
+                                <span class="label">Project Value:</span> Rs 788,000<br>
+                                <span class="label">Duration:</span> 12 Months<br>
+                                <span class="label">Date Approved:</span> 22nd June 2017<br>
+                                <span class="label">Date Started:</span> 21 July 2017<br>
+                                <span class="label">Date Completed:</span> 28 October 2019<br>
+                                <span class="label">Role:</span> Principal Investigator<br>
+                                <span class="label">Status:</span> <span class="status-completed">Completed</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">7</td>
+                            <td class="content-col">
+                                <strong>Analyzing Energy Consumption of Mobile Phones in Mauritius.</strong><br>
+                                <span class="label">Funding Scheme:</span> UoM Internally Funded (R148)<br>
+                                <span class="label">Project Value:</span> Rs 50,000<br>
+                                <span class="label">Duration:</span> 7 Months<br>
+                                <span class="label">Date Approved:</span> 18 October 2013<br>
+                                <span class="label">Date Started:</span> January 2014<br>
+                                <span class="label">Date Completed:</span> 31 July 2014<br>
+                                <span class="label">Role:</span> Principal Investigator<br>
+                                <span class="label">Status:</span> <span class="status-completed">Completed</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">8</td>
+                            <td class="content-col">
+                                <strong>Framework for the design of sustainable residential buildings in Mauritius</strong><br>
+                                <span class="label">Funding Scheme:</span> Mauritius Research Council (MRC)<br>
+                                <span class="label">Project Value:</span> Rs 236,200<br>
+                                <span class="label">Duration:</span> 24 Months<br>
+                                <span class="label">Date Started:</span> 01 August 2010<br>
+                                <span class="label">Date Completed:</span> 05 October 2012<br>
+                                <span class="label">Role:</span> Co-Investigator<br>
+                                <span class="label">Status:</span> <span class="status-completed">Completed</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- ONGOING PROJECTS -->
+        <!-- ========================================================= -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-spinner"></i> Ongoing Projects
+            </div>
+            <div class="card">
+                <table class="project-table">
+                    <thead>
+                        <tr><th>#</th><th>Project Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="num-col">1</td>
+                            <td class="content-col">
+                                <strong>AI-MASTER - A Cross Platform AI Application for Education and Research</strong><br>
+                                <span class="label">Funding Scheme:</span> HEC Research Scheme in Artificial Intelligence, Ref (HEC/11/4/35/3)<br>
+                                <span class="label">Project Value:</span> Rs 497,622.50<br>
+                                <span class="label">Duration:</span> 18 Months<br>
+                                <span class="label">Date Approved:</span> 09 July 2025<br>
+                                <span class="label">Date Started:</span> 30 July 2025<br>
+                                <span class="label">Date Completed:</span> N/A<br>
+                                <span class="label">Role:</span> Principal Investigator<br>
+                                <span class="label">Status:</span> <span class="status-ongoing">Ongoing</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="num-col">2</td>
+                            <td class="content-col">
+                                <strong>Performance Analysis and Characterization of Future Wireless Communication Networks.</strong><br>
+                                <span class="label">Funding Scheme:</span> FACE QR Research Funding at Wrexham University<br>
+                                <span class="label">Project Value (Initial):</span> 2500 GBP (~Rs 150,000)<br>
+                                <span class="label">Duration:</span> 1 Month for initial deliverable / Extensible in phases<br>
+                                <span class="label">Date Approved:</span> 1st July 2024<br>
+                                <span class="label">Date Started:</span> 15 July 2024<br>
+                                <span class="label">Date Completed:</span> N/A<br>
+                                <span class="label">Role:</span> Co-Investigator<br>
+                                <span class="label">Status:</span> <span class="status-ongoing">Ongoing</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- PROJECTS WITH MoU IN PROCESS -->
+        <!-- ========================================================= -->
+        <section class="section">
+            <div class="section-title">
+                <i class="fas fa-file-signature"></i> Projects with MoU in Process
+            </div>
+            <div class="card">
+                <table class="project-table">
+                    <thead>
+                        <tr><th>#</th><th>Project Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="num-col">1</td>
+                            <td class="content-col">
+                                <strong>Developing a Cross-Platform Application for Real-Time Broadband Internet Quality of Service Assessment</strong><br>
+                                <span class="label">Funding Scheme:</span> Information and Communications Technology Authority (ICTA), Mauritius<br>
+                                <span class="label">Project Value:</span> Rs 672,289<br>
+                                <span class="label">Duration:</span> 12 Months<br>
+                                <span class="label">Funding Approved by Board of ICTA:</span> 08 April 2024<br>
+                                <span class="label">Role:</span> Principal Investigator<br>
+                                <span class="label">Status:</span> <span class="status-mou">Signature of Research Collaborative Agreement / MoU between UoM and ICTA is in process</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- HOME BUTTON -->
+        <div class="home-btn-wrap">
+            <a href="index.html" class="home-btn"><i class="fas fa-house"></i> &nbsp; Return to Home Page</a>
+        </div>
+
+    </div> <!-- end container -->
+
+    <footer>
+        <h3>Associate Professor (Dr) Tulsi Pawan Fowdur</h3>
+        <br>Department of Electrical and Electronic Engineering<br>Faculty of Engineering<br>University of Mauritius
+        <br><br>© 2026 All Rights Reserved
+    </footer>
+
+    <script>
+        // fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.animate([
+                        { opacity: 0, transform: "translateY(40px)" },
+                        { opacity: 1, transform: "translateY(0px)" }
+                    ], { duration: 700, fill: "forwards" });
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll(".section").forEach(s => observer.observe(s));
+
+        // scroll-to-top button
+        const btn = document.createElement("button");
+        btn.innerHTML = "<i class='fas fa-arrow-up'></i>";
+        btn.style.position = "fixed";
+        btn.style.bottom = "25px";
+        btn.style.right = "25px";
+        btn.style.width = "55px";
+        btn.style.height = "55px";
+        btn.style.borderRadius = "50%";
+        btn.style.border = "none";
+        btn.style.background = "#0d3b73";
+        btn.style.color = "white";
+        btn.style.fontSize = "20px";
+        btn.style.cursor = "pointer";
+        btn.style.display = "none";
+        btn.style.boxShadow = "0 8px 20px rgba(0,0,0,.3)";
+        btn.style.transition = ".3s";
+        document.body.appendChild(btn);
+        window.addEventListener("scroll", () => {
+            btn.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+        btn.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+
+</body>
+</html>
